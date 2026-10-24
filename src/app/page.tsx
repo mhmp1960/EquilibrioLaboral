@@ -1,20 +1,84 @@
 import Link from 'next/link';
-import { ArrowRight, ArrowUpRight, HeartHandshake, Leaf, ShieldCheck, UsersRound } from 'lucide-react';
-import { Marca } from '@/components/Marca';
+import {
+  ArrowRight,
+  ArrowUpRight,
+  BriefcaseBusiness,
+  Check,
+  Heart,
+  Scale,
+  Smile,
+  Target,
+} from 'lucide-react';
 
-const areas = [
-  { n: '01', icon: '⌂', title: 'Ambiente físico', text: 'Espacios seguros, cómodos y pensados para trabajar bien.', hue: 'menta' },
-  { n: '02', icon: '♡', title: 'Clima laboral', text: 'Relaciones de confianza, respeto y buena comunicación.', hue: 'lila' },
-  { n: '03', icon: '◷', title: 'Vida y trabajo', text: 'Una carga sostenible y espacio para lo que importa.', hue: 'durazno' },
-  { n: '04', icon: '↗', title: 'Crecimiento', text: 'Reconocimiento, aprendizaje y desarrollo profesional.', hue: 'azul' },
-  { n: '05', icon: '✳', title: 'Salud emocional', text: 'Apoyo oportuno para sentirte bien y pertenecer.', hue: 'rosa' },
+const beneficios = [
+  { icon: BriefcaseBusiness, titulo: 'Más productividad', texto: 'Cuando las personas están bien, el trabajo fluye mejor.', color: 'azul' },
+  { icon: Heart, titulo: 'Mejor salud mental', texto: 'Un entorno sano reduce el estrés y fortalece el bienestar.', color: 'verde' },
+  { icon: Scale, titulo: 'Tiempo para ti', texto: 'Crea espacio para tu familia, tus intereses y tu descanso.', color: 'lila' },
+  { icon: Target, titulo: 'Metas con sentido', texto: 'Avanza en lo profesional y personal con mayor claridad.', color: 'ambar' },
+  { icon: Smile, titulo: 'Más satisfacción', texto: 'Haz del trabajo una parte positiva de una vida plena.', color: 'turquesa' },
 ];
 
-export default function Inicio() { return <>
-  <section className="hero shell"><div className="hero-copy"><div className="eyebrow"><span className="eyebrow-dot" /> BIENESTAR LABORAL, CON PROPÓSITO</div><h1>El bienestar se<br />construye <em>en equipo.</em></h1><p className="hero-sub">Una pausa para escuchar. Un primer paso para transformar la forma en que trabajamos.</p><p className="hero-desc">Evalúa las condiciones de trabajo, el clima laboral, el equilibrio vida-trabajo y el apoyo emocional de tu equipo. Con claridad, cuidado y acciones concretas.</p><div className="hero-actions"><Link className="boton boton-principal" href="/auditoria">Iniciar auditoría <ArrowRight size={17} /></Link><span className="duracion"><span className="duracion-punto" /> 5 áreas <span>·</span> 5 minutos <span>·</span> Confidencial</span></div><div className="hero-confianza"><div className="avatars"><span>M</span><span>J</span><span>A</span><span>+</span></div><span>Una escucha que puede cambiarlo todo.</span></div></div>
-    <div className="hero-visual"><div className="visual-fondo" /><div className="visual-circulo circulo-1" /><div className="visual-circulo circulo-2" /><div className="hero-sello"><div className="sello-icon"><HeartHandshake size={20} /></div><span>Personas primero</span></div><div className="tarjeta-visual"><div className="tarjeta-top"><div><span className="tarjeta-overline">TU EQUIPO, EN EQUILIBRIO</span><h3>Un espacio para crecer.</h3></div><div className="punto-verde" /></div><div className="ilustracion"><div className="sol" /><div className="planta"><i /><i /><i /><b /></div><div className="persona"><div className="cabeza" /><div className="cuerpo" /><div className="brazo" /></div><div className="silla" /><div className="suelo" /></div><div className="tarjeta-bottom"><span><Leaf size={14} /> Pequeños cambios, gran impacto.</span><span className="mini-lineas"><i /><i /><i /></span></div></div><div className="flotante"><span className="flotante-icon"><Leaf size={16} /></span><span><b>El primer paso</b><small>es escuchar 🌱</small></span></div><div className="decor-punto dp1"/><div className="decor-punto dp2"/></div>
-  </section>
-  <section className="cinta"><div className="shell cinta-inner"><span><ShieldCheck size={17} /> Respuestas confidenciales</span><i /><span><UsersRound size={17} /> Hecha para personas, por personas</span><i /><span><HeartHandshake size={17} /> Sin juicios. Con propósito.</span></div></section>
-  <section className="areas-seccion shell"><div className="section-heading"><div><div className="eyebrow">UNA MIRADA COMPLETA</div><h2>El bienestar tiene<br /><em>muchas dimensiones.</em></h2></div><p>Cinco áreas que nos ayudan a comprender cómo se siente trabajar en tu equipo. Cada respuesta aporta una pieza.</p></div><div className="areas-grid">{areas.map((a) => <article className={`area-card area-${a.hue}`} key={a.n}><div className="area-card-top"><span className="area-icon">{a.icon}</span><span className="area-num">{a.n}</span></div><h3>{a.title}</h3><p>{a.text}</p><div className="area-rayas"><i /><i /><i /></div></article>)}</div></section>
-  <section className="cierre shell"><div className="cierre-box"><div className="cierre-text"><span className="eyebrow">EL CAMBIO EMPIEZA AQUÍ</span><h2>¿Y si el trabajo<br />también se sintiera <em>bien?</em></h2><p>Escucha a tu equipo. Descubre oportunidades. Empieza con una conversación.</p><Link className="boton boton-claro" href="/auditoria">Comenzar ahora <ArrowUpRight size={17} /></Link></div><div className="cierre-sello"><Marca grande /><div className="sello-linea" /><p>Un mejor trabajo<br />empieza por escuchar.</p><span>✳</span></div></div></section>
-</>; }
+const habitos = [
+  'Establece horarios y respétalos.',
+  'Aprende a decir “no” cuando sea necesario.',
+  'Desconéctate del trabajo fuera de horario.',
+  'Cuida tu salud física y emocional.',
+  'Reconoce tus avances, incluso los pequeños.',
+];
+
+export default function Inicio() {
+  return (
+    <>
+      <section className="home-hero" aria-labelledby="home-title">
+        <div className="home-hero-foto" role="img" aria-label="Persona disfrutando un momento de calma al aire libre" />
+        <div className="home-hero-capa" />
+        <div className="home-hero-contenido shell">
+          <div className="home-hero-copy">
+            <span className="home-kicker"><i /> Equilibrio laboral</span>
+            <h1 id="home-title">El secreto está en <span>equilibrar</span> tu vida.</h1>
+            <p>No se trata de trabajar menos, sino de vivir y trabajar mejor. Escucha a tu equipo y encuentra cambios que sí hacen la diferencia.</p>
+            <div className="home-hero-acciones">
+              <Link href="#bienestar" className="home-boton home-boton-azul">Descubre cómo <ArrowRight size={18} /></Link>
+              <Link href="/auditoria" className="home-link">Conoce la auditoría <ArrowUpRight size={16} /></Link>
+            </div>
+            <div className="home-hero-nota"><span className="home-nota-punto" /> Una evaluación clara, confidencial y centrada en las personas</div>
+          </div>
+          <p className="home-hero-frase">Más tiempo<br />para lo que<br /><em>realmente importa.</em></p>
+        </div>
+        <a className="home-bajar" href="#bienestar" aria-label="Desplazarse a los beneficios"><span /></a>
+      </section>
+
+      <section className="home-beneficios shell" id="bienestar" aria-label="Beneficios de un buen equilibrio laboral">
+        {beneficios.map(({ icon: Icon, titulo, texto, color }) => (
+          <article className="home-beneficio" key={titulo}>
+            <div className={`home-beneficio-icono home-icono-${color}`}><Icon size={29} strokeWidth={1.8} aria-hidden="true" /></div>
+            <h2>{titulo}</h2>
+            <p>{texto}</p>
+          </article>
+        ))}
+      </section>
+
+      <section className="home-habitos shell" aria-labelledby="home-habitos-title">
+        <div className="home-habitos-copy">
+          <span className="home-kicker home-kicker-oscuro"><i /> Pequeños hábitos, grandes cambios</span>
+          <h2 id="home-habitos-title">Tips para lograr tu equilibrio laboral</h2>
+          <p>El bienestar también se construye con decisiones cotidianas. Empieza con una que puedas sostener.</p>
+          <ul>
+            {habitos.map((habito) => <li key={habito}><span><Check size={15} strokeWidth={2.8} aria-hidden="true" /></span>{habito}</li>)}
+          </ul>
+          <Link href="/auditoria" className="home-habitos-link">Explora tu bienestar <ArrowRight size={16} /></Link>
+        </div>
+        <div className="home-habitos-foto" role="img" aria-label="Espacio de trabajo cálido con libreta, café, laptop y una planta">
+          <div className="home-foto-etiqueta"><span className="home-foto-punto" /> UN PASO A LA VEZ</div>
+        </div>
+      </section>
+
+      <section className="home-cierre shell" aria-label="Comienza hoy">
+        <div className="home-cierre-marca" aria-hidden="true"><span className="home-cierre-emblema"><Scale size={27} strokeWidth={1.5} /></span><i /></div>
+        <div className="home-cierre-titular"><span>Tu bienestar también</span><strong>es parte del trabajo.</strong></div>
+        <p>El equilibrio no es un destino. Es una forma más consciente de trabajar y vivir cada día.</p>
+        <Link href="/auditoria" className="home-boton home-boton-amarillo">Empieza hoy <ArrowRight size={17} /></Link>
+      </section>
+    </>
+  );
+}
