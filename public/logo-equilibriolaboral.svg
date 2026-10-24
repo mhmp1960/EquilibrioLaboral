@@ -1,9 +1,9 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="520" height="110" viewBox="0 0 520 110" fill="none" role="img" aria-labelledby="title desc">
   <title id="title">EquilibrioLaboral</title>
   <desc id="desc">Una balanza con un brote representa el bienestar en el trabajo.</desc>
-  <rect x="7" y="7" width="96" height="96" rx="30" fill="#14343A"/>
+  <rect x="7" y="7" width="96" height="96" rx="30" fill="#162F43"/>
   <path d="M55 35v40M31 37h48M31 37 19 59m12-22 12 22m36-22L67 59m12-22 12 22M19 59q12 11 24 0m24 0q12 11 24 0M43 79h24" stroke="#B7EBD2" stroke-width="4.2" stroke-linecap="round" stroke-linejoin="round"/>
   <path d="M55 34c-9-6-6-15 1-18 8 4 8 13-1 18Z" fill="#7CC9A5"/>
-  <path d="M55 33v-8" stroke="#14343A" stroke-width="1.8" stroke-linecap="round"/>
-  <text x="126" y="69" fill="#14343A" font-family="Manrope, Arial, Helvetica, sans-serif" font-size="39" font-weight="700" letter-spacing="-0.8">Equilibrio<tspan dx="-2" fill="#22866B">Laboral</tspan></text>
+  <path d="M55 33v-8" stroke="#162F43" stroke-width="1.8" stroke-linecap="round"/>
+  <text x="126" y="69" fill="#162F43" font-family="Manrope, Arial, Helvetica, sans-serif" font-size="39" font-weight="700" letter-spacing="-0.8">Equilibrio<tspan dx="-2" fill="#087F75">Laboral</tspan></text>
 </svg>
