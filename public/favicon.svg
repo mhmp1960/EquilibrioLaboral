@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 108 108" fill="none" role="img" aria-labelledby="title">
   <title id="title">EquilibrioLaboral</title>
-  <rect width="108" height="108" rx="34" fill="#112C37"/>
-  <path d="M54 32v42M26 33h56M26 33 13 57m13-24 13 24m43-24L69 57m13-24 13 24M13 57q13 12 26 0m30 0q13 12 26 0M39 78h30" stroke="#A9E8D1" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M54 30c-10-7-7-17 1-20 9 5 9 15-1 20Z" fill="#7CC9A5"/>
-  <path d="M54 29v-9" stroke="#112C37" stroke-width="1.8" stroke-linecap="round"/>
+  <rect x="6" y="6" width="96" height="96" rx="30" fill="#14343A"/>
+  <path d="M54 34v40M30 36h48M30 36 18 58m12-22 12 22m36-22L66 58m12-22 12 22M18 58q12 11 24 0m24 0q12 11 24 0M42 78h24" stroke="#B7EBD2" stroke-width="4.2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M54 33c-9-6-6-15 1-18 8 4 8 13-1 18Z" fill="#7CC9A5"/>
+  <path d="M54 32v-8" stroke="#14343A" stroke-width="1.8" stroke-linecap="round"/>
 </svg>
