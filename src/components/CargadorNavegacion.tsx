@@ -1,45 +1,63 @@
 'use client';
 
-import Image from 'next/image';
 import { usePathname } from 'next/navigation';
-import { useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
+import { Simbolo } from './Marca';
 
-const DURACION_MINIMA = 520;
-const DURACION_SALIDA = 320;
+const DURACION_MINIMA = 650;
+const DURACION_SALIDA = 400;
+const TIEMPO_MAXIMO = 8000;
 
+/** Pantalla de carga: se muestra al abrir la app y entre páginas. */
 export function CargadorNavegacion() {
   const ruta = usePathname();
-  const [visible, setVisible] = useState(false);
+  const [visible, setVisible] = useState(true);
   const [saliendo, setSaliendo] = useState(false);
+  const visibleRef = useRef(true);
   const inicioRef = useRef(0);
   const anteriorRef = useRef(ruta);
   const temporizadorRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
-  useEffect(() => () => {
+  const limpiar = useCallback(() => {
     if (temporizadorRef.current) clearTimeout(temporizadorRef.current);
+    temporizadorRef.current = null;
   }, []);
 
-  useEffect(() => {
-    if (anteriorRef.current === ruta) return;
-    anteriorRef.current = ruta;
-    if (!visible) return;
-
+  const ocultar = useCallback(() => {
+    limpiar();
     const restante = Math.max(0, DURACION_MINIMA - (Date.now() - inicioRef.current));
     temporizadorRef.current = setTimeout(() => {
       setSaliendo(true);
       temporizadorRef.current = setTimeout(() => {
+        visibleRef.current = false;
         setVisible(false);
         setSaliendo(false);
       }, DURACION_SALIDA);
     }, restante);
-  }, [ruta, visible]);
+  }, [limpiar]);
+
+  // Carga inicial de la aplicación.
+  useEffect(() => {
+    inicioRef.current = Date.now();
+    ocultar();
+    return limpiar;
+  }, [ocultar, limpiar]);
+
+  // La página nueva ya está lista.
+  useEffect(() => {
+    if (anteriorRef.current === ruta) return;
+    anteriorRef.current = ruta;
+    if (visibleRef.current) ocultar();
+  }, [ruta, ocultar]);
 
   useEffect(() => {
     const iniciarCarga = () => {
-      if (temporizadorRef.current) clearTimeout(temporizadorRef.current);
+      limpiar();
       inicioRef.current = Date.now();
+      visibleRef.current = true;
       setSaliendo(false);
       setVisible(true);
+      temporizadorRef.current = setTimeout(ocultar, TIEMPO_MAXIMO);
     };
 
     const alHacerClic = (event: MouseEvent) => {
@@ -55,29 +73,23 @@ export function CargadorNavegacion() {
       iniciarCarga();
     };
 
-    const alVolver = () => iniciarCarga();
     document.addEventListener('click', alHacerClic, true);
-    window.addEventListener('popstate', alVolver);
+    window.addEventListener('popstate', iniciarCarga);
     return () => {
       document.removeEventListener('click', alHacerClic, true);
-      window.removeEventListener('popstate', alVolver);
+      window.removeEventListener('popstate', iniciarCarga);
     };
-  }, []);
+  }, [ocultar, limpiar]);
 
   if (!visible) return null;
 
   return (
-    <div className={`cargador-pantalla${saliendo ? ' cargador-saliendo' : ''}`} role="status" aria-live="polite" aria-label="Cargando página">
-      <div className="cargador-brillo" aria-hidden="true" />
-      <div className="cargador-contenido">
-        <div className="cargador-marca">
-          <span className="cargador-anillo cargador-anillo-externo" aria-hidden="true" />
-          <span className="cargador-anillo cargador-anillo-interno" aria-hidden="true" />
-          <Image src="/logo-equilibriolaboral.svg" alt="EquilibrioLaboral" width={230} height={49} priority />
-        </div>
-        <p className="cargador-mensaje">Preparando tu experiencia</p>
-        <div className="cargador-barra" aria-hidden="true"><span /></div>
-        <span className="cargador-detalle">Un momento, por favor</span>
+    <div className={`cargador${saliendo ? ' cargador-saliendo' : ''}`} role="status" aria-live="polite" aria-label="Cargando EquilibrioLaboral">
+      <div className="cargador-centro">
+        <div className="cargador-simbolo"><Simbolo tamano={88} animado /></div>
+        <p className="cargador-nombre">Equilibrio<b>Laboral</b></p>
+        <p className="cargador-detalle">Preparando tu experiencia</p>
+        <div className="cargador-progreso" aria-hidden="true"><span /></div>
       </div>
     </div>
   );

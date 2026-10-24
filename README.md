@@ -1,32 +1,39 @@
 <div align="center">
-  <img src="public/logo-equilibriolaboral.svg" alt="EquilibrioLaboral" width="440" />
 
-  <h1>EquilibrioLaboral</h1>
-  <p><strong>Bienestar que se siente. Equipos que crecen.</strong></p>
-  <p>Una auditoría cercana y confidencial para escuchar cómo se vive el trabajo y convertir esa escucha en acciones concretas.</p>
+<img src="public/banner.svg" alt="EquilibrioLaboral — Bienestar que se siente. Equipos que crecen." width="100%" />
 
-  <p>
-    <a href="https://github.com/mhmp1960/EquilibrioLaboral"><img src="https://img.shields.io/badge/estado-v1.0.0-188568?style=flat-square" alt="Versión 1.0.0" /></a>
-    <img src="https://img.shields.io/badge/Next.js-14-112c37?style=flat-square&logo=nextdotjs" alt="Next.js 14" />
-    <img src="https://img.shields.io/badge/TypeScript-5-3178C6?style=flat-square&logo=typescript&logoColor=white" alt="TypeScript" />
-    <img src="https://img.shields.io/badge/Privacidad-localStorage-4cae8e?style=flat-square" alt="Respuestas guardadas localmente" />
-  </p>
-  <p><a href="#-comenzar">Comenzar</a> · <a href="#-la-auditoría">La auditoría</a> · <a href="#-resultados">Resultados</a> · <a href="#-privacidad">Privacidad</a></p>
+<br />
+
+**Auditoría de bienestar laboral, confidencial y en cinco áreas.**
+Convierte lo que las personas sienten en un diagnóstico claro y en acciones concretas.
+
+<br />
+
+[![Versión](https://img.shields.io/badge/versión-1.0.0-0B857B?style=flat-square)](https://github.com/mhmp1960/EquilibrioLaboral)
+[![Next.js](https://img.shields.io/badge/Next.js-14-0D2A3D?style=flat-square&logo=nextdotjs)](https://nextjs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?style=flat-square&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![Privacidad](https://img.shields.io/badge/datos-solo%20en%20tu%20dispositivo-3CC2B3?style=flat-square)](#privacidad)
+
+[Comenzar](#comenzar) · [La auditoría](#la-auditoría) · [Resultados](#resultados) · [Sistema de diseño](#sistema-de-diseño) · [Privacidad](#privacidad)
+
 </div>
 
 ---
 
-## ✨ ¿Qué es EquilibrioLaboral?
+## Resumen
 
-EquilibrioLaboral es una aplicación web para reflexionar sobre el bienestar en el trabajo. A través de afirmaciones breves y una escala de cinco puntos, ayuda a identificar fortalezas y oportunidades de mejora en un equipo.
+EquilibrioLaboral es una aplicación web para reflexionar sobre el bienestar en el trabajo. Mediante afirmaciones breves y una escala de cinco puntos, identifica fortalezas y oportunidades de mejora en un equipo, y las traduce en recomendaciones priorizadas.
 
-No busca poner etiquetas ni emitir diagnósticos: ofrece una mirada clara para iniciar conversaciones y acordar próximos pasos.
+No etiqueta ni diagnostica: ofrece una mirada clara para iniciar conversaciones y acordar próximos pasos.
 
-## 🌿 La auditoría
+| | |
+| --- | --- |
+| **5** áreas de bienestar | **23** afirmaciones |
+| **< 5 min** para completarla | **0** datos enviados a servidores |
 
-La experiencia está organizada en cinco áreas:
+## La auditoría
 
-| Área | ¿Qué observa? |
+| Área | Qué observa |
 | --- | --- |
 | **Ambiente físico y seguridad** | Iluminación, limpieza, ergonomía, herramientas y medidas de seguridad. |
 | **Clima laboral y relaciones** | Respeto, comunicación, compañerismo, trato justo y resolución de conflictos. |
@@ -34,135 +41,155 @@ La experiencia está organizada en cinco áreas:
 | **Crecimiento y reconocimiento** | Aprendizaje, reconocimiento, feedback y desarrollo profesional. |
 | **Salud emocional y apoyo** | Manejo del estrés, apoyo, prevención del acoso y sentido de pertenencia. |
 
-Cada afirmación se responde en una escala de **1 (muy en desacuerdo) a 5 (muy de acuerdo)**. Se puede añadir un comentario libre al final. El formulario guarda el avance en el navegador para poder retomarlo.
+Cada afirmación se responde de **1 (muy en desacuerdo)** a **5 (muy de acuerdo)**. Al final hay un espacio opcional para comentarios. El avance se guarda automáticamente y puede retomarse.
 
-## 📊 Resultados
+## Resultados
 
-Al finalizar, la aplicación presenta:
+- **Puntaje general** con indicador circular y nivel de interpretación.
+- **Fortaleza y prioridad**: el área mejor y la peor puntuada, de un vistazo.
+- **Gráfico comparativo** y detalle por área.
+- **Recomendaciones** para las áreas con menor puntaje.
+- Acciones para **imprimir o guardar como PDF**, **compartir un resumen** o **iniciar otra auditoría**.
 
-- **Puntuación general** y puntuación por cada área.
-- **Gráfico comparativo** para reconocer de un vistazo dónde enfocar la atención.
-- **Recomendaciones personalizadas** según las áreas con resultados más bajos.
-- Acciones para **imprimir o guardar como PDF**, compartir un resumen o iniciar otra auditoría.
+### Cómo se calcula
 
-### Cómo se calcula el puntaje
-
-1. Las respuestas de cada área se promedian y se convierten a una escala de 0 a 100 (<code>promedio × 20</code>).
-2. La puntuación general es el promedio de las áreas que tienen respuestas.
+1. Las respuestas de cada área se promedian y se convierten a una escala de 0 a 100 (`promedio × 20`).
+2. La puntuación general es el promedio de las áreas con respuestas.
 3. Las recomendaciones priorizan las áreas con menor puntuación.
 
-| Puntaje | Interpretación |
+| Puntaje | Nivel |
 | ---: | --- |
-| 80–100 | 🟢 Óptimo |
-| 60–79 | 🟡 Mejorable |
-| 40–59 | 🟠 Atención media |
-| 0–39 | 🔴 Necesita acción |
+| 80–100 | Óptimo |
+| 60–79 | Mejorable |
+| 40–59 | Atención media |
+| 0–39 | Necesita acción |
 
-## 🧰 Tecnologías
+## Sistema de diseño
 
-- [Next.js 14](https://nextjs.org/) con App Router
-- [React 18](https://react.dev/) y TypeScript
-- [Tailwind CSS 3](https://tailwindcss.com/)
-- [Recharts](https://recharts.org/) para visualizaciones
+Toda la interfaz se apoya en un único sistema de diseño definido en [`src/app/globals.css`](src/app/globals.css), organizado en secciones (tokens, base, layout, componentes, marca, cargador y páginas).
+
+### Marca
+
+| Activo | Archivo |
+| --- | --- |
+| Logo horizontal (fondos claros) | [`public/logo-equilibriolaboral.svg`](public/logo-equilibriolaboral.svg) |
+| Logo horizontal (fondos oscuros) | [`public/logo-equilibriolaboral-claro.svg`](public/logo-equilibriolaboral-claro.svg) |
+| Favicon vectorial | [`public/favicon.svg`](public/favicon.svg) |
+| Favicon `.ico` | [`src/app/favicon.ico`](src/app/favicon.ico) |
+| Banner del proyecto | [`public/banner.svg`](public/banner.svg) |
+| Símbolo en la interfaz (con animación) | [`src/components/Marca.tsx`](src/components/Marca.tsx) |
+
+**El símbolo** es una balanza nivelada cuyos platillos son hojas: equilibrio como base del bienestar. En la pantalla de carga la balanza oscila hasta encontrar su punto de equilibrio.
+
+### Tokens
+
+| Token | Valor | Uso |
+| --- | --- | --- |
+| `--navy-900` | `#0D2A3D` | Texto de marca, botones primarios, superficies oscuras |
+| `--teal-600` | `#0B857B` | Acento principal, enlaces y estados activos |
+| `--teal-400` | `#3CC2B3` | Acento sobre fondos oscuros |
+| `--mint` | `#BDEBDD` | Detalles e iconos sobre azul marino |
+| `--bg` / `--surface` | `#F5F8FA` / `#FFFFFF` | Fondo de página y tarjetas |
+
+Cada área tiene un **tono** propio (`teal`, `violet`, `amber`, `blue`, `rose`) y cada nivel de resultado un **estado** (`optimo`, `mejorable`, `atencion`, `urgente`), aplicados con los atributos `data-tono` y las clases `estado-*`.
+
+### Tipografía
+
+- **Manrope** para títulos y cifras.
+- **Inter** para texto e interfaz.
+- Ambas se cargan con `next/font` (autoalojadas en la compilación, sin solicitudes externas en ejecución).
+
+### Componentes y comportamiento
+
+- Botones (`btn-primario`, `btn-secundario`, `btn-claro`), tarjetas, insignias, anillo de puntaje y barras de progreso.
+- Pantalla de carga al abrir la aplicación y entre páginas, con tiempo máximo de seguridad.
+- Transición suave entre páginas (`src/app/template.tsx`).
+- Diseño adaptable (escritorio, tableta y teléfono) y estilos de impresión para los resultados.
+
+### Accesibilidad
+
+- Enlace «Saltar al contenido», foco visible y navegación completa por teclado.
+- Preguntas como `fieldset` con opciones de radio nativas; el paso activo recibe el foco.
+- Indicador de progreso con `role="progressbar"`.
+- Respeta `prefers-reduced-motion`.
+
+## Tecnologías
+
+- [Next.js 14](https://nextjs.org/) (App Router), [React 18](https://react.dev/) y TypeScript
+- [Tailwind CSS 3](https://tailwindcss.com/) (base y tokens) con CSS propio para el sistema de diseño
+- [Recharts](https://recharts.org/) para la visualización
 - [Lucide React](https://lucide.dev/) para iconos
-- <code>localStorage</code> para guardar el avance en el dispositivo
+- `localStorage` para guardar el avance en el dispositivo
 
-## 🚀 Comenzar
+## Comenzar
 
-### Requisitos
+**Requisitos:** Node.js 18.17 o posterior y npm 9 o posterior.
 
-- Node.js **18.17 o posterior**
-- npm **9 o posterior**
-
-### Instalación y modo desarrollo
-
-~~~bash
+```bash
 git clone https://github.com/mhmp1960/EquilibrioLaboral.git
 cd EquilibrioLaboral
 npm install
 npm run dev
-~~~
+```
 
-Abre [http://localhost:3000](http://localhost:3000) en el navegador.
+Abre [http://localhost:3000](http://localhost:3000).
 
-### Compilación de producción
+```bash
+npm run build   # compilación de producción
+npm start       # servir la compilación
+```
 
-~~~bash
-npm run build
-npm start
-~~~
+### Publicar en Vercel
 
-## ☁️ Publicar en Vercel
+1. Importa el repositorio desde [Vercel](https://vercel.com/new).
+2. Deja que Vercel detecte Next.js y usa `npm run build`.
 
-1. Importa <code>mhmp1960/EquilibrioLaboral</code> desde el panel de [Vercel](https://vercel.com/new).
-2. Deja que Vercel detecte Next.js automáticamente.
-3. Despliega con el comando de compilación <code>npm run build</code>.
+No requiere variables de entorno ni servicios externos.
 
-No se necesitan variables de entorno ni servicios externos para guardar las respuestas.
+## Estructura del proyecto
 
-## 🗂️ Estructura del proyecto
-
-~~~text
+```text
 EquilibrioLaboral/
 ├── public/
-│   ├── favicon.svg                    # Símbolo de la marca para la pestaña
-│   └── logo-equilibriolaboral.svg     # Logo horizontal para documentación
+│   ├── banner.svg                        # Banner del README
+│   ├── favicon.svg                       # Símbolo para la pestaña
+│   ├── logo-equilibriolaboral.svg        # Logo para fondos claros
+│   └── logo-equilibriolaboral-claro.svg  # Logo para fondos oscuros
 ├── src/
 │   ├── app/
-│   │   ├── acerca/                    # Propósito, cálculo y privacidad
-│   │   ├── auditoria/                 # Introducción a la auditoría
-│   │   ├── resultados/                # Resumen y visualización
-│   │   ├── globals.css                # Sistema visual y estilos adaptables
-│   │   ├── layout.tsx                 # Layout y metadatos
-│   │   └── page.tsx                   # Página de inicio
-│   ├── components/                    # Navegación, marca, formulario y resultados
-│   └── lib/auditoria.ts               # Preguntas, puntajes y recomendaciones
-├── .gitignore
-├── package.json
-└── README.md
-~~~
+│   │   ├── acerca/                       # Propósito, método y privacidad
+│   │   ├── auditoria/                    # Formulario paso a paso
+│   │   ├── resultados/                   # Resumen y visualización
+│   │   ├── globals.css                   # Sistema de diseño
+│   │   ├── layout.tsx                    # Layout, fuentes y metadatos
+│   │   ├── manifest.ts                   # Manifiesto web
+│   │   ├── template.tsx                  # Transición entre páginas
+│   │   └── page.tsx                      # Inicio
+│   ├── components/                       # Marca, navegación, cargador, formulario, resultados
+│   └── lib/auditoria.ts                  # Áreas, preguntas, puntajes y recomendaciones
+└── package.json
+```
 
-## 🎨 Personalizar
+## Personalizar
 
-### Preguntas y recomendaciones
+- **Preguntas, áreas y recomendaciones:** [`src/lib/auditoria.ts`](src/lib/auditoria.ts). Cada pregunta pertenece a un área con `id`, `tono` y descripción.
+- **Niveles de interpretación:** constante `NIVELES` en el mismo archivo.
+- **Colores, espaciado y tipografía:** tokens al inicio de [`src/app/globals.css`](src/app/globals.css).
 
-Edita <code>secciones</code> y <code>recomendar()</code> en [src/lib/auditoria.ts](src/lib/auditoria.ts). Cada pregunta pertenece a un área identificada por un <code>id</code>.
+## Privacidad
 
-### Colores y tipografía
+Las respuestas y comentarios se guardan **solo en el almacenamiento local del navegador**; no hay cuentas ni servidores que las reciban. Al borrar los datos del sitio se elimina también la auditoría guardada.
 
-Las variables principales de color y los estilos adaptables están en [src/app/globals.css](src/app/globals.css). Los tonos individuales de las áreas se definen junto a sus preguntas en <code>src/lib/auditoria.ts</code>.
+Compartir genera un resumen de puntajes solo cuando la persona lo solicita. La herramienta es una guía para conversar y no constituye un diagnóstico clínico ni una auditoría legal.
 
-### Logo y favicon
+## Colaboración
 
-- [public/logo-equilibriolaboral.svg](public/logo-equilibriolaboral.svg) es el logo horizontal usado en esta documentación.
-- [public/favicon.svg](public/favicon.svg) es el símbolo compacto de la pestaña.
-- El logo de la interfaz se renderiza desde [src/components/Marca.tsx](src/components/Marca.tsx).
-
-Los archivos SVG se pueden editar con un editor vectorial o de texto. Para crear un <code>favicon.ico</code>, exporta <code>public/favicon.svg</code> a 32 × 32 px en formato ICO.
-
-## 🔐 Privacidad
-
-Las respuestas y comentarios se guardan **solo en el almacenamiento local del navegador**. No se envían a servidores externos. Al borrar los datos del sitio en el navegador, también se elimina la auditoría guardada.
-
-La acción de compartir genera un resumen de puntajes cuando la persona la solicita; el contenido se comparte mediante las funciones disponibles en el dispositivo. La herramienta es una guía para conversar y no constituye un diagnóstico clínico ni una auditoría legal.
-
-## 🤝 Colaboración
-
-1. Crea una rama para tu cambio: <code>git switch -c mejora/nombre-del-cambio</code>.
-2. Realiza los cambios y verifica localmente con <code>npm run build</code>.
-3. Envía una solicitud de cambio con una descripción clara de lo que aporta.
-
-## 🧭 Rutas principales
-
-| Ruta | Contenido |
-| --- | --- |
-| <code>/</code> | Inicio y áreas de bienestar |
-| <code>/auditoria</code> | Formulario paso a paso |
-| <code>/resultados</code> | Puntajes, gráfico y recomendaciones |
-| <code>/acerca</code> | Propósito, cálculo y privacidad |
+1. Crea una rama: `git switch -c mejora/nombre-del-cambio`.
+2. Verifica con `npm run build` y `npm run lint`.
+3. Abre una solicitud de cambio con una descripción clara.
 
 ---
 
 <div align="center">
-  <sub><strong>EquilibrioLaboral 1.0.0</strong> · Hecho con cuidado para equipos que importan.</sub>
+  <sub><strong>EquilibrioLaboral 1.0.0</strong> · Una iniciativa de Miguel Hermógenes Mogrovejo Pérez</sub>
 </div>
