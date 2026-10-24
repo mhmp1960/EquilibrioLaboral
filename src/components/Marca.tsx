@@ -1,6 +1,19 @@
+import Image from 'next/image';
 import Link from 'next/link';
-import { Scale } from 'lucide-react';
 
 export function Marca({ grande = false }: { grande?: boolean }) {
-  return <Link href="/" className={`marca${grande ? ' marca-grande' : ''}`} aria-label="EquilibrioLaboral, ir al inicio"><span className="marca-icono"><Scale size={grande ? 29 : 21} strokeWidth={1.8} /></span><span>equilibrio<span className="marca-verde">laboral</span></span></Link>;
+  const ancho = grande ? 230 : 190;
+  const alto = grande ? 49 : 41;
+
+  return (
+    <Link href="/" className={"marca" + (grande ? " marca-grande" : "")} aria-label="EquilibrioLaboral, ir al inicio">
+      <Image
+        src="/logo-equilibriolaboral.svg"
+        alt=""
+        width={ancho}
+        height={alto}
+        priority={grande}
+      />
+    </Link>
+  );
 }
