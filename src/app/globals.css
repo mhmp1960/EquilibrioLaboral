@@ -71,3 +71,26 @@ main:focus{outline:none}
   .resultado-header{display:block}
   .sello-puntaje{margin:24px auto 0}
 }
+
+.cargador-pantalla{position:fixed;inset:0;z-index:1000;display:grid;place-items:center;overflow:hidden;background:rgba(255,254,250,.96);backdrop-filter:blur(16px);animation:cargador-aparecer .32s ease both}
+.cargador-pantalla.cargador-saliendo{animation:cargador-desaparecer .32s ease both;pointer-events:none}
+.cargador-brillo{position:absolute;width:min(72vw,620px);aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,#dff3e9 0%,#eff8f0 38%,transparent 72%);opacity:.74;animation:cargador-respirar 2.8s ease-in-out infinite}
+.cargador-contenido{position:relative;display:flex;flex-direction:column;align-items:center;padding:34px;text-align:center}
+.cargador-marca{position:relative;width:250px;height:108px;display:grid;place-items:center}
+.cargador-marca img{position:relative;z-index:1;width:210px;height:auto;animation:cargador-logo 2.2s ease-in-out infinite;filter:drop-shadow(0 8px 14px #163c301c)}
+.cargador-anillo{position:absolute;left:50%;top:50%;border:1px solid #b7dfca;border-radius:50%;transform:translate(-50%,-50%)}
+.cargador-anillo-externo{width:240px;height:88px;animation:cargador-orbita 4.8s linear infinite}
+.cargador-anillo-interno{width:220px;height:74px;border-color:#d2eadb;transform:translate(-50%,-50%) rotate(-12deg);animation:cargador-orbita-inversa 5.6s linear infinite}
+.cargador-mensaje{margin:22px 0 17px;color:var(--navy);font-family:'Manrope',sans-serif;font-size:16px;font-weight:700;letter-spacing:-.25px}
+.cargador-barra{width:180px;height:4px;border-radius:10px;background:#e4eee7;overflow:hidden}
+.cargador-barra span{display:block;width:42%;height:100%;border-radius:inherit;background:linear-gradient(90deg,#4cae8e,#a9e8d1);animation:cargador-progreso 1.35s cubic-bezier(.65,0,.35,1) infinite}
+.cargador-detalle{margin-top:12px;color:#7b8b82;font-size:11px;letter-spacing:.3px}
+@keyframes cargador-aparecer{from{opacity:0}to{opacity:1}}
+@keyframes cargador-desaparecer{from{opacity:1}to{opacity:0}}
+@keyframes cargador-respirar{0%,100%{transform:scale(.94);opacity:.48}50%{transform:scale(1.06);opacity:.8}}
+@keyframes cargador-logo{0%,100%{transform:translateY(1px) scale(.98)}50%{transform:translateY(-3px) scale(1.025)}}
+@keyframes cargador-orbita{from{transform:translate(-50%,-50%) rotate(0)}to{transform:translate(-50%,-50%) rotate(360deg)}}
+@keyframes cargador-orbita-inversa{from{transform:translate(-50%,-50%) rotate(-12deg)}to{transform:translate(-50%,-50%) rotate(-372deg)}}
+@keyframes cargador-progreso{0%{transform:translateX(-110%)}55%{transform:translateX(125%)}100%{transform:translateX(310%)}}
+@media(max-width:480px){.cargador-contenido{padding:24px}.cargador-marca{width:220px;height:96px}.cargador-marca img{width:185px}.cargador-anillo-externo{width:215px;height:80px}.cargador-anillo-interno{width:198px;height:68px}.cargador-mensaje{font-size:15px}}
+@media(prefers-reduced-motion:reduce){.cargador-pantalla,.cargador-brillo,.cargador-marca img,.cargador-anillo,.cargador-barra span{animation:none!important}.cargador-barra span{width:65%;transform:none}}
